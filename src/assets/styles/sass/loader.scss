@@ -1,0 +1,34 @@
+@import "fonts";
+
+#loader{
+    background: black;
+    color: white;
+    width: 100%;
+    height: 100%;
+}
+
+.main-text{
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.big-text{
+    font-size: 80px;
+}
+
+.small-text{
+    font-size: 20px;
+    display: block;
+    text-align: center;
+}
+
+.line-shape{
+    width: 2px;
+    height: 24px;
+    background: white;
+    margin: 0 auto;
+    margin-top: 26.5px;
+}
