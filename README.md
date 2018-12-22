@@ -1,4 +1,4 @@
-# sterling-api-docs-vue
+# cafe-one
 
 > A Vue.js project
 
