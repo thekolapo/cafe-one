@@ -39,7 +39,7 @@ class App {
 
     this.app.use(express.static(path.join(__dirname, 'frontend')));
 
-    this.app.get('/', (req, res) => {
+    this.app.get('*', (req, res) => {
       res.sendFile(path.join(__dirname, 'frontend/index.html'));
     });
 
