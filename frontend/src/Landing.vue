@@ -39,7 +39,7 @@
         </div>
       </div>
     </div>
-    <div class="row col-sm-12"></div>
+    <div class="row col-xs-12"></div>
     <form class="section-subscribe" v-if="showForm">
       <div class="form-mobile">
         <input type="text" class="text-field" placeholder="Full name">
