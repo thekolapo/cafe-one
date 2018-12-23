@@ -1,18 +1,23 @@
 @import "fonts";
 
-#loader{
+#loader, main-content{
     background: black;
     color: white;
     width: 100%;
     height: 100%;
 }
 
+.main-content{
+    justify-content: center;
+    display: flex;
+}
+
 .main-text{
     position: absolute;
-    left: 50%;
-    top: 45%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    // left: 50%;
+    top: 33%;
+    // -webkit-transform: translate(-50%, -50%);
+    // transform: translate(-50%, -0%);
 }
 
 .big-text{
@@ -31,4 +36,24 @@
     background: white;
     margin: 0 auto;
     margin-top: 26.5px;
+}
+
+@media screen and (max-width: 768px){
+    .big-text{
+        font-size: 60px;
+    }
+
+    .small-text{
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 480px){
+    // .big-text{
+    //     font-size: 60px;
+    // }
+
+    // .small-text{
+    //     font-size: 15px;
+    // }
 }

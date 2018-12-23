@@ -1,13 +1,14 @@
 <template>
   <div id = "landing">
+    <div id="white-overlay" ref="whiteOverlay"></div>
     <div id="nav">
       <img src="./assets/img/cafe-one-logo.png" class="logo">
       <div class="social-links">
-        <a href="" class="link">Fb</a><br>
-        <a href="" class="link">Tw</a><br>
-        <a href="" class="link">Ig</a>
+        <a href="" target="_blank">Fb</a><br>
+        <a href="https://twitter.com/cafeone_ng/" target="_blank">Tw</a><br>
+        <a href="https://www.instagram.com/cafeone_nig/" target="_blank">Ig</a>
       </div>
-      <div class="address">Lennox Mall, Admiralty Way, Lekki Phase One.</div>
+      <!-- <div class="address">Lennox Mall, Admiralty Way, Lekki Phase One.</div> -->
     </div>
     <div class="image-slide-section" ref="bigImageHolder">
       <!-- <img src="./assets/img/image-slide-one.jpg" ref="bigImage"> -->
@@ -18,36 +19,46 @@
             <img :src="currentImage"/>
           </div>
         </transition-group> -->
-
     </div>
-    <div class="right-side-content">
-      <div class="text-line-combo">
+    <div class="right-side">
+      <!-- <div class="text-line-combo">
         <div class="text float-left margin-left-30">Innovation</div>
         <div class="line float-right"></div>
       </div>
       <div class="text-line-combo">
         <div class="text float-right margin-right-30">Community</div>
         <div class="line float-left"></div>
-      </div>
-      <div class="long-text">
-        Keytar McSweeney's Williamsburg, readymade leggings try-hard 90's street art letterpress hoodie occupy Wes Anderson Banksy. 
-        Asymmetrical viral letterpress, McSweeney's seitan 3 wolf moon drinking vinegar sartorial pour-over messenger bag photo booth 
-        umami next level craft beer. Tote bag 8-bit flannel dreamcatcher photo booth. Tofu photo booth American Apparel, cliche brunch 
-        swag freegan lomo retro cray Vice gastropub post-ironic +1 pickled. Marfa Tonx next level.
+      </div> -->
+      <div class="content">
+        <div class="header-text">Café One</div>
+        <div class="long-text">
+          Keytar McSweeney's Williamsburg, readymade leggings try-hard 90's street art letterpress hoodie occupy Wes Anderson Banksy. 
+          Asymmetrical viral letterpress, McSweeney's seitan 3 wolf moon drinking vinegar sartorial pour-over messenger bag photo booth 
+          umami next level craft beer. Tote bag 8-bit flannel dreamcatcher photo booth. Tofu photo booth American Apparel, cliche brunch 
+          swag freegan lomo retro cray Vice gastropub post-ironic +1 pickled. Marfa Tonx next level.
+        </div>
       </div>
     </div>
     <div class="row col-sm-12"></div>
     <form class="section-subscribe" v-if="showForm">
-       <input type="text" class="text-field" placeholder="Full name">
-       <div class="divider"></div>
-       <input type="email" class="text-field" placeholder="Email address">
+      <div class="form-mobile">
+        <input type="text" class="text-field" placeholder="Full name">
+        <input type="email" class="text-field" placeholder="Email address">
+        <input type="number" class="text-field" placeholder="Phone number">
+        <button>Submit</button>
+      </div>
+      <div class="form-non-mobile">
+        <input type="text" class="text-field" placeholder="Full name">
         <div class="divider"></div>
-       <input type="number" class="text-field" placeholder="Phone number">
-       <button>Submit</button>
-       <div class="checkbox-section">
-         <input type="checkbox">
-         <span>Send me occassional marketing updates.</span>
-       </div>
+        <input type="email" class="text-field" placeholder="Email address">
+        <div class="divider"></div>
+        <input type="number" class="text-field" placeholder="Phone number">
+        <button>Submit</button>
+        <div class="checkbox-section">
+          <input type="checkbox">
+          <span>Send me occassional marketing updates.</span>
+        </div>
+      </div>
     </form> 
     <div class="section-join-community" v-else>
       <div class="button-join" @click="displayForm()">
@@ -78,13 +89,22 @@ export default {
   },
 
   mounted() { 
-    const { bigImage } = this.$refs;
+    const { bigImage, whiteOverlay } = this.$refs;
 
-    setTimeout(() => {
-      this.switchImage();
-      // this.viaJs = require('./assets/img/image-slide-two.jpg') 
-    }, imageSwitchInterval);
-    //  this.startRotation();
+    whiteOverlay.style.width = "100%";
+
+    TweenMax.to(whiteOverlay, 1.1, {'opacity' : "0",
+      onComplete: setTimeout(() => {
+        this.switchImage();
+        whiteOverlay.style.display = "none";
+      }, 2000),
+    });
+
+    // setTimeout(() => {
+    //   this.switchImage();
+    //   // this.viaJs = require('./assets/img/image-slide-two.jpg') 
+    // }, imageSwitchInterval);
+    // //  this.startRotation();
   },
 
   methods: {
@@ -135,7 +155,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 @import "./assets/styles/sass/landing";
 
