@@ -16,9 +16,92 @@ body{
     position: relative;
 }
 
+.line-divider{
+    width: 25%;
+    height: 1px;
+    background: black;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.margin-bottom-56{
+    margin-bottom: 56px;
+}
+
 .fade-enter, .fade-leave-to {
     opacity: 0;
     visibility: hidden;
+}
+
+.logo-slogan{
+    position: absolute;
+    top: 86%;
+    left: 5%;
+
+    .cafe-one-logo{
+        object-fit: contain;
+        object-position: left;
+        width: 172px;
+        height: 31px;
+        display: block;
+    }
+
+    .slogan{
+        float: left;
+        font-size: 17px;
+        color: white;
+        margin-top: 10px;
+    }
+}
+
+.text-join-community{
+    float: left;
+    font-size: 16px;
+    margin-top: 90px;
+    width: 85%;
+    margin-bottom: 20px;
+
+    img{
+        width: 50px;
+        object-fit: contain;
+        margin-left: 10px;
+        cursor: pointer;
+        transition: 0.4s ease-in-out;
+    }
+
+    img:hover{
+        margin-left: 16px;
+        transition: 0.4s ease-in-out;
+    }
+}
+
+.small-header-text{
+    font-size: 17px;
+    float: left;
+    margin-top: 40px;
+    font-weight: normal;
+}
+
+.text-contact-details{
+    float: left;
+    width: 100%;
+    margin-top: 6px;
+    font-size: 16px;
+}
+
+.opening-days-hours{
+    float: left;
+    width: 90%;
+    font-size: 16px;
+    margin-top: 20px;
+
+    .left-text{
+        float: left;
+    }
+
+    .right-text{
+        float: right;
+    }
 }
 
 #landing{
@@ -44,9 +127,9 @@ body{
     }
 
     .social-links{
-        padding-top: 100px;
-        margin-top: 50%;
-        font-size: 14px;
+        padding-top: 200px;
+        // margin-top: 100%;
+        font-size: 16px;
         text-align: center;
 
         a{
@@ -71,16 +154,17 @@ body{
 }
 
 .image-slide-section{
+    position: relative;
     width: 55%;
     // height: 785px;
-    height: 80%;
+    height: 86%;
     background: rgba(128, 128, 128, 0.5);
     float: left;
     margin-left: 7%;
 
     // position: fixed;
 
-    img{
+    .big-image{
         object-fit: cover;
         object-position: right;
         width: 100%;
@@ -88,7 +172,7 @@ body{
         transition: 0.5s ease-in-out;
     }
 
-    img:hover{
+    .big-image:hover{
         // width: 100.3%;
         height: 100.5%;
         transition: 0.5s ease-in-out;
@@ -98,29 +182,19 @@ body{
 .right-side{
     width: 37%;
     float: right;
-    // height: 500px;
-    // background: #000000;
-    // padding-top: 168px;
-    padding-top: 10%;
-    // padding-left: $right-side-text-padding;
-    // padding-right: $right-side-text-padding;
+    padding-top: 5%;
+    height: 100%;
+    overflow: auto;
 
     .header-text{
         font-size: 36px;
-        text-align: center;
+        // text-align: center;
     }
     
     .content{
-        width: 70%;
+        width: 75%;
         margin: 0 auto;
     }
-
-    // .text-line-combo{
-    //     font-size: 36px;
-    //     margin-bottom: 50px;
-    //     // background: rebeccapurple;
-    //     // height: 100px;;
-    // }
 
     .float-left{
         float: left;
@@ -146,13 +220,15 @@ body{
     }
 
     .long-text{
-        width: 100%;
+        width: 90%;
         float: left;
         margin-top: 27px;
         // background: blanchedalmond;
         line-height: 1.7;
         text-align: justify;
-        font-size: 16px;
+        font-size: 17px;
+        // line-height: 1.33;
+        text-align: justify;
     }
 
 }
@@ -267,24 +343,79 @@ body{
 
 }
 
-@media screen and (max-width: 1440px){
+.form-section{
+    font-weight: 200;
+    padding-top: 7%;
 
-    .image-slide-section{
-        height: 75%;
+    .label{
+        float: left;
+        font-size: 14px;
+        color: #000000;
+        font-weight: 200;
+        width: 100%;
+        text-align: left;
+        // background: gray;
+        padding-left: 0px;
+        opacity: 0.6;
+        margin-bottom: 10px;
     }
 
+    .input-field{
+        display: block;
+        width: 70%;
+        float: left;
+        border: none;
+        border-bottom: solid 1px rgba(0, 0, 0, 0.5);
+        outline: none;
+        font-size: 17px;
+        margin-bottom: 39px;
+    }
+
+    .checkbox-section{
+        width: 80%;
+        float: left;
+
+        input{
+            width: 6%;
+            float: left;
+        }
+
+        span{
+            width: 94%;
+            float: left;
+        }
+    }
+
+    button{
+        margin-top: 83px;
+        width: 70%;
+        font-weight: 500;
+        background: transparent;
+        border: none;
+        font-size: 16px;
+        margin-bottom: 20px;
+        outline: none;
+    }
+}
+
+@media screen and (max-width: 1440px){
+
+    // .image-slide-section{
+    //     height: 75%;
+    // }
+
     .right-side{
-        padding-top: 7%;
+        // padding-top: 7%;
         
         .content{
             width: 80%;
         }
     }
 
-    .section-subscribe{
-        margin-top: 30px;
-        height: 55px;
-    }
+    // .section-subscribe{
+    //     margin-top: 30px;
+    //     height: 55px;
+    // }
 }
 
 @media screen and (max-width: 1280px){
@@ -334,9 +465,6 @@ body{
         }
     }
 
-    .section-join-community{
-        margin-left: 9%;
-    }
 }
 
 
@@ -352,42 +480,18 @@ body{
 
         .content{
             width: 70%;
-        }
-
-        .long-text{
-            text-align: center;
+            width: 80%;
         }
     }
 
-    .section-join-community{
-        width: 100%;
-        font-size: 20px;
-        margin-left: 0%;
+    #nav{
 
-    
-        .button-join{
-            justify-content: center;
-            display: flex;
-        }
-    
-        .small-text{
-            margin-top: -16px;
-            text-align: center;
-            width: 100%;
-            margin-bottom: 30px;
+    .social-links{
+
+        a{
+            // color: white;
         }
     }
-
-    .section-subscribe{
-        width: 80%;
-        float: left;
-        margin-left: 10%;
-    
-        .text-field{
-            width: 25.5%;
-           
-        }
-    
     }
     
 }
@@ -412,9 +516,10 @@ body{
     }
 
     .right-side{
+        height: auto;
 
         .content{
-            width: 95%;
+            width: 90%;
         }
 
         .header-text{
@@ -462,206 +567,28 @@ body{
     
     }
 
-    .section-join-community{
-        width: 100%;
-
+    .form-section{
+      
+        .input-field{
+            width: 90%;
+        }
     
-        .button-join{
-
-            .text{
-                font-size: 17px;
+        .checkbox-section{
+            width: 90%;
+    
+            input{
+                width: 7%;
             }
     
-            img{
-                width: 100px;
-                height: 14px;
-                opacity: 0.8;
+            span{
+                width: 93%;
             }
         }
     
-        .small-text{
-            font-size: 12px;
+        button{
+            width: 90%;
         }
     }
+
     
 }
-
-// @media screen and (min-width: 1920px){
-//     $right-side-text-padding : 165px;
-
-//     .image-slide-section{
-//         width: 55%;
-//         height: 900px;
-//     }
-
-//     .right-side-content{
-//         float: right;
-//         padding-left:  $right-side-text-padding;
-//         padding-right:  $right-side-text-padding;
-//     }
-
-//     #nav{
-
-//         .address{
-           
-//             margin-top: 160px;
-//         }
-//     }
-
-//     .section-join-community{
-//         padding-left: $right-side-text-padding;
-//         padding-right: $right-side-text-padding;
-//     }
-  
-// }
-
-
-// @media screen and (max-width: 1440px){
-//     $right-side-text-padding : 100px;
-
-//     .image-slide-section{
-//         width: 55%;
-//         height: 650px;
-//     }
-
-//     .right-side-content{
-//         float: right;
-//         padding-left: $right-side-text-padding;
-//         padding-right: $right-side-text-padding;
-//         padding-top: 8%;
-
-//         .text-line-combo{
-//             font-size: 33px;
-//         }
-
-//         .long-text{
-//             font-size: 15px;
-//         }
-//     }
-
-//     .section-join-community{
-//         padding-left: $right-side-text-padding;
-//         padding-right: $right-side-text-padding;
-//     }
-
-//     #nav{
-//         .logo{
-//             width: 60px;
-//             height: 50px;
-//         }
-
-//         .social-links{
-//             padding-top: 50px;
-//             font-size: 12px;
-    
-//             a{
-//                 margin-bottom: 30px;
-//             }
-        
-//         }
-//         .address{
-//             margin-top: 75px;
-//             font-size: 12px;
-//         }
-//     }
-// }
-
-// @media screen and (max-width: 1280px){
-//     $right-side-text-padding : 85px;
-
-//     .image-slide-section{
-//         width: 55%;
-//         height: 550px;
-//     }
-
-//     .right-side-content{
-//         padding-left: $right-side-text-padding;
-//         padding-right: $right-side-text-padding;
-//         padding-top: 8%;
-
-//         .text-line-combo{
-//             font-size: 28px;
-//         }
-
-//         .long-text{
-//             font-size: 13px;
-//         }
-//     }
-
-//     .section-join-community{
-//         padding-left: $right-side-text-padding;
-//         padding-right: $right-side-text-padding;
-//         font-size: 16px;
-//     }
-
-//     #nav{
-//         .logo{
-//             width: 54px;
-//             height: 48px;
-//         }
-
-//         .social-links{
-//             padding-top: 50px;
-//             font-size: 10px;
-    
-//             a{
-//                 margin-bottom: 20px;
-//             }
-        
-//         }
-//         .address{
-//             margin-top: 68px;
-//             font-size: 10px;
-//         }
-//     }
-// }
-
-// @media screen and (max-width: 1024px){
-//     $right-side-text-padding : 75px;
-
-//     .image-slide-section{
-//         width: 55%;
-//         height: 450px;
-//     }
-
-//     .right-side-content{
-//         padding-left: $right-side-text-padding;
-//         padding-right: $right-side-text-padding;
-//         padding-top: 5%;
-
-//         .text-line-combo{
-//             font-size: 16px;
-//         }
-
-//         .long-text{
-//             font-size: 11px;
-//         }
-//     }
-
-//     .section-join-community{
-//         padding-left: $right-side-text-padding;
-//         padding-right: $right-side-text-padding;
-//         font-size: 16px;
-//     }
-
-//     #nav{
-//         .logo{
-//             width: 54px;
-//             height: 48px;
-//         }
-
-//         .social-links{
-//             padding-top: 50px;
-//             font-size: 10px;
-    
-//             a{
-//                 margin-bottom: 20px;
-//             }
-        
-//         }
-//         .address{
-//             margin-top: 68px;
-//             font-size: 10px;
-//         }
-//     }
-// }
