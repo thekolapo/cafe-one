@@ -17,7 +17,7 @@
     </div>
     <div class="right-side">
       <div class="content">
-        <div class="form-section" v-if="showForm">
+        <form class="form-section" v-if="showForm">
           <div class="header-text">Join our mailing list</div>
           <div class="line-divider margin-bottom-56"></div>
           <div class="label">Your full name</div>
@@ -32,7 +32,7 @@
           </div>
           <!-- <div class="row col-xs-12"></div> -->
           <button @click="onSubmit()">Join in</button>
-        </div>
+        </form>
         <div class="about" v-else>
           <div class="header-text">What we do</div>
           <div class="line-divider"></div>
