@@ -1,5 +1,6 @@
 const joi = require('joi');
 const httpStatus = require('http-status-codes');
+const Logger = require('../services/logger');
 
 const UserSignUpSchema = joi.object({
   email_address: joi
@@ -26,7 +27,7 @@ const parseError = error => {
       ...acc,
       [curr.context.key]: curr.message,
     }),
-    {}
+    {},
   );
   return parsedError;
 };
@@ -42,11 +43,14 @@ module.exports = (req, res, next) => {
     return next();
   }
 
-  // log console.error
-
   res.status(httpStatus.UNPROCESSABLE_ENTITY).json({
     message: 'One or more validation errors occured',
     error: parseError(error),
     status: 'error',
+  });
+  Logger.info({
+    err: error,
+    res,
+    meta_msg: 'validation error',
   });
 };
