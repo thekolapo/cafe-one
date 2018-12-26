@@ -16,9 +16,92 @@ body{
     position: relative;
 }
 
+.line-divider{
+    width: 25%;
+    height: 1px;
+    background: black;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.margin-bottom-56{
+    margin-bottom: 56px;
+}
+
 .fade-enter, .fade-leave-to {
     opacity: 0;
     visibility: hidden;
+}
+
+.logo-slogan{
+    position: absolute;
+    top: 86%;
+    left: 5%;
+
+    .cafe-one-logo{
+        object-fit: contain;
+        object-position: left;
+        width: 172px;
+        height: 31px;
+        display: block;
+    }
+
+    .slogan{
+        float: left;
+        font-size: 17px;
+        color: white;
+        margin-top: 10px;
+    }
+}
+
+.text-join-community{
+    float: left;
+    font-size: 16px;
+    margin-top: 90px;
+    width: 85%;
+    margin-bottom: 20px;
+
+    img{
+        width: 50px;
+        object-fit: contain;
+        margin-left: 10px;
+        cursor: pointer;
+        transition: 0.4s ease-in-out;
+    }
+
+    img:hover{
+        margin-left: 16px;
+        transition: 0.4s ease-in-out;
+    }
+}
+
+.small-header-text{
+    font-size: 17px;
+    float: left;
+    margin-top: 40px;
+    font-weight: normal;
+}
+
+.text-contact-details{
+    float: left;
+    width: 100%;
+    margin-top: 6px;
+    font-size: 16px;
+}
+
+.opening-days-hours{
+    float: left;
+    width: 90%;
+    font-size: 16px;
+    margin-top: 20px;
+
+    .left-text{
+        float: left;
+    }
+
+    .right-text{
+        float: right;
+    }
 }
 
 #landing{
@@ -44,9 +127,9 @@ body{
     }
 
     .social-links{
-        padding-top: 100px;
-        margin-top: 50%;
-        font-size: 14px;
+        padding-top: 200px;
+        // margin-top: 100%;
+        font-size: 16px;
         text-align: center;
 
         a{
@@ -71,16 +154,17 @@ body{
 }
 
 .image-slide-section{
+    position: relative;
     width: 55%;
     // height: 785px;
-    height: 81%;
-    // background: gray;
+    height: 86%;
+    background: rgba(128, 128, 128, 0.5);
     float: left;
     margin-left: 7%;
 
     // position: fixed;
 
-    img{
+    .big-image{
         object-fit: cover;
         object-position: right;
         width: 100%;
@@ -88,28 +172,28 @@ body{
         transition: 0.5s ease-in-out;
     }
 
-    img:hover{
+    .big-image:hover{
         // width: 100.3%;
         height: 100.5%;
         transition: 0.5s ease-in-out;
     }
 }
 
-.right-side-content{
+.right-side{
     width: 37%;
     float: right;
-    // height: 500px;
-    // background: #000000;
-    // padding-top: 168px;
     padding-top: 5%;
-    padding-left: $right-side-text-padding;
-    padding-right: $right-side-text-padding;
+    height: 100%;
+    overflow: auto;
 
-    .text-line-combo{
+    .header-text{
         font-size: 36px;
-        margin-bottom: 50px;
-        // background: rebeccapurple;
-        // height: 100px;;
+        // text-align: center;
+    }
+    
+    .content{
+        width: 75%;
+        margin: 0 auto;
     }
 
     .float-left{
@@ -136,26 +220,29 @@ body{
     }
 
     .long-text{
-        width: 100%;
+        width: 90%;
         float: left;
         margin-top: 27px;
         // background: blanchedalmond;
         line-height: 1.7;
         text-align: justify;
-        font-size: 16px;
+        font-size: 17px;
+        // line-height: 1.33;
+        text-align: justify;
     }
 
 }
 
 .section-join-community{
-    margin-top: 43px;
+    margin-top: 40px;
     width: 38%;
-    padding-left: $right-side-text-padding;
-    padding-right: $right-side-text-padding;
+    // padding-left: $right-side-text-padding;
+    // padding-right: $right-side-text-padding;
     // background: #000000;
-    float: right;
+    float: left;
     font-size: 20px;
-    margin-bottom: 50px;
+    // margin-bottom: 50px;
+    margin-left: 7%;
 
     .button-join{
         width: 100%;
@@ -195,14 +282,23 @@ body{
     width: 55%;
     float: left;
     margin-left: 7%;
-    margin-top: 47px;
-    height: 70px;
+    margin-top: 40px;
+    height: 60px;
     border: solid 1px rgba(0, 0, 0, 0.4);
     border-radius: 3px;
     font-weight: normal;
 
+    .form-mobile, .form-non-mobile{
+        width: 100%;
+        height: 100%;
+    }
+
+    .form-mobile{
+        display: none;
+    }
+
     .text-field{
-        width: 26.3%;
+        width: 26.2%;
         height: 100%;
         outline: none;
         float: left;
@@ -227,11 +323,12 @@ body{
         color: white;
         border: none;
         float: right;
+        outline: none;
     }
 
     .checkbox-section{
-        margin-top: 25px;
-        margin-bottom: 10px;
+        margin-top: 20px;
+        // margin-bottom: 10px;
         float: left;
 
         span{
@@ -246,182 +343,252 @@ body{
 
 }
 
-@media screen and (min-width: 1920px){
-    $right-side-text-padding : 165px;
+.form-section{
+    font-weight: 200;
+    padding-top: 7%;
 
-    .image-slide-section{
-        width: 55%;
-        height: 900px;
+    .label{
+        float: left;
+        font-size: 14px;
+        color: #000000;
+        font-weight: 200;
+        width: 100%;
+        text-align: left;
+        // background: gray;
+        padding-left: 0px;
+        opacity: 0.6;
+        margin-bottom: 10px;
     }
 
-    .right-side-content{
-        float: right;
-        padding-left:  $right-side-text-padding;
-        padding-right:  $right-side-text-padding;
+    .input-field{
+        display: block;
+        width: 70%;
+        float: left;
+        border: none;
+        border-bottom: solid 1px rgba(0, 0, 0, 0.5);
+        outline: none;
+        font-size: 17px;
+        margin-bottom: 39px;
     }
 
-    #nav{
+    .checkbox-section{
+        width: 80%;
+        float: left;
 
-        .address{
-           
-            margin-top: 160px;
+        input{
+            width: 6%;
+            float: left;
+        }
+
+        span{
+            width: 94%;
+            float: left;
         }
     }
 
-    .section-join-community{
-        padding-left: $right-side-text-padding;
-        padding-right: $right-side-text-padding;
+    button{
+        margin-top: 83px;
+        width: 70%;
+        font-weight: 500;
+        background: transparent;
+        border: none;
+        font-size: 16px;
+        margin-bottom: 20px;
+        outline: none;
     }
-  
 }
 
-
 @media screen and (max-width: 1440px){
-    $right-side-text-padding : 100px;
 
-    .image-slide-section{
-        width: 55%;
-        height: 650px;
-    }
+    // .image-slide-section{
+    //     height: 75%;
+    // }
 
-    .right-side-content{
-        float: right;
-        padding-left: $right-side-text-padding;
-        padding-right: $right-side-text-padding;
-        padding-top: 8%;
-
-        .text-line-combo{
-            font-size: 33px;
-        }
-
-        .long-text{
-            font-size: 15px;
-        }
-    }
-
-    .section-join-community{
-        padding-left: $right-side-text-padding;
-        padding-right: $right-side-text-padding;
-    }
-
-    #nav{
-        .logo{
-            width: 60px;
-            height: 50px;
-        }
-
-        .social-links{
-            padding-top: 50px;
-            font-size: 12px;
-    
-            a{
-                margin-bottom: 30px;
-            }
+    .right-side{
+        // padding-top: 7%;
         
-        }
-        .address{
-            margin-top: 75px;
-            font-size: 12px;
+        .content{
+            width: 80%;
         }
     }
+
+    // .section-subscribe{
+    //     margin-top: 30px;
+    //     height: 55px;
+    // }
 }
 
 @media screen and (max-width: 1280px){
-    $right-side-text-padding : 85px;
 
-    .image-slide-section{
-        width: 55%;
-        height: 550px;
-    }
-
-    .right-side-content{
-        padding-left: $right-side-text-padding;
-        padding-right: $right-side-text-padding;
-        padding-top: 8%;
-
-        .text-line-combo{
-            font-size: 28px;
-        }
-
-        .long-text{
-            font-size: 13px;
-        }
-    }
-
-    .section-join-community{
-        padding-left: $right-side-text-padding;
-        padding-right: $right-side-text-padding;
-        font-size: 16px;
-    }
-
-    #nav{
-        .logo{
-            width: 54px;
-            height: 48px;
-        }
-
-        .social-links{
-            padding-top: 50px;
-            font-size: 10px;
-    
-            a{
-                margin-bottom: 20px;
-            }
+    .right-side{
+        padding-top: 7%;
         
+        .content{
+            width: 87%;
         }
-        .address{
-            margin-top: 68px;
-            font-size: 10px;
-        }
+    }
+
+    .section-subscribe{
+        margin-top: 30px;
+        height: 52px;
     }
 }
 
 @media screen and (max-width: 1024px){
-    $right-side-text-padding : 75px;
+
+    #nav{
+        width: 9%;
+
+        .logo{
+            width: 65px;
+            height: 55px;
+        }
+    }
 
     .image-slide-section{
-        width: 55%;
-        height: 450px;
+        // width: 4%;
+        margin-left: 9%;
     }
 
-    .right-side-content{
-        padding-left: $right-side-text-padding;
-        padding-right: $right-side-text-padding;
-        padding-top: 5%;
+    .right-side{
+        width: 36%;
+        padding-top: 10%;
+    }
 
-        .text-line-combo{
-            font-size: 16px;
-        }
+    .section-subscribe{
+        margin-left: 9%;
 
-        .long-text{
-            font-size: 11px;
+        .text-field{
+            width: 26%;
+            font-size: 14px;
+            padding-left: 20px;
         }
     }
 
-    .section-join-community{
-        padding-left: $right-side-text-padding;
-        padding-right: $right-side-text-padding;
-        font-size: 16px;
+}
+
+
+@media screen and (max-width: 900px){
+    .image-slide-section{
+        width: 91%;
+        margin-left: 9%;
+    }
+
+    .right-side{
+        float: left;
+        width: 100%;
+
+        .content{
+            width: 70%;
+            width: 80%;
+        }
     }
 
     #nav{
-        .logo{
-            width: 54px;
-            height: 48px;
-        }
 
-        .social-links{
-            padding-top: 50px;
-            font-size: 10px;
-    
-            a{
-                margin-bottom: 20px;
-            }
-        
-        }
-        .address{
-            margin-top: 68px;
-            font-size: 10px;
+    .social-links{
+
+        a{
+            // color: white;
         }
     }
+    }
+    
+}
+
+@media screen and (max-width: 600px){
+
+    #nav{
+        position: absolute;
+        width: 13%;
+        z-index: 20;
+
+        .logo{
+            width: 55px;
+            height: 45px;
+        }
+
+    }
+
+    .image-slide-section{
+        width: 100%;
+        margin-left: 0%;
+    }
+
+    .right-side{
+        height: auto;
+
+        .content{
+            width: 90%;
+        }
+
+        .header-text{
+            font-size: 30px;
+        }
+
+        .long-text{
+            // margin-top: 10px;
+            font-size: 15px;
+        }
+
+    }
+
+    .section-subscribe{
+        width: 90%;
+        margin-left: 5%;
+        border: none;
+
+        .form-non-mobile{
+            display: none;
+        }
+
+        .form-mobile{
+            width: 97%;
+            margin: 0 auto;
+            display: block;
+            
+            .text-field, button{
+                width: 100%;
+                height: 45px;
+                border: solid 1px rgba(0, 0, 0, 0.2);
+                border-radius: 5px;
+                margin-bottom: 30px;
+            }
+
+            button{
+               border: none;
+            }
+        }
+    
+        .text-field{
+            width: 25%;
+           
+        }
+    
+    }
+
+    .form-section{
+      
+        .input-field{
+            width: 90%;
+        }
+    
+        .checkbox-section{
+            width: 90%;
+    
+            input{
+                width: 7%;
+            }
+    
+            span{
+                width: 93%;
+            }
+        }
+    
+        button{
+            width: 90%;
+        }
+    }
+
+    
 }
