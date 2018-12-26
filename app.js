@@ -3,6 +3,7 @@ const dotenv = require('dotenv');
 const compression = require('compression');
 const path = require('path');
 const mongoose = require('mongoose');
+const responseTime = require('response-time');
 const config = require('./config');
 const validator = require('./middlewares/validator');
 const UserController = require('./controllers/user');
@@ -44,6 +45,9 @@ class App {
     this.app.get('*', (req, res) => {
       res.sendFile(path.join(__dirname, 'frontend/index.html'));
     });
+
+    // add response time header
+    this.app.use(responseTime());
 
     // log requests
     this.app.use(LoggerMiddleware);
