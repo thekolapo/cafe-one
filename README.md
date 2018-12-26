@@ -1,18 +1,24 @@
-# cafe-one
+# Cafe One
 
-> A Vue.js project
+> The Frontend client sits in the `frontend` folder.
 
-## Build Setup
+## Running the Node.js server locally
 
-``` bash
+```bash
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
-npm run dev
+# start server in development
+npm run start:dev
 
-# build for production with minification
-npm run build
+# start server (locally)
+npm run start
+
+# By default the server runs on port 3005
+
+# To change this behavior create a .env file at the root of the project and specify the new PORT value.
 ```
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## Making API calls from Client
+
+> Make sure the client is running locally aleady. To register users a POST request should be made to `/api/users` along with the body of the request. More information can be found in the postman documentation here: [Postman Docs](https://documenter.getpostman.com/view/2585467/Rzn8Q2Mb)
