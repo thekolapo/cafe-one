@@ -7,17 +7,17 @@
     <div id="nav">
       <div class="social-links">
         <a
-          href=""
+          href="https://www.facebook.com/cafeoneng"
           target="_blank"
-        >Fb</a><br>
+        ><i class="fab fa-facebook-f"></i></a><br>
         <a
           href="https://twitter.com/cafeone_ng/"
           target="_blank"
-        >Tw</a><br>
+        ><i class="fab fa-twitter"></i></a><br>
         <a
           href="https://www.instagram.com/cafeone_nig/"
           target="_blank"
-        >Ig</a>
+        ><i class="fab fa-instagram"></i></a>
       </div>
     </div>
     <div
@@ -44,7 +44,7 @@
         v-if="toast.show"
       />
       <div class="content">
-        <form
+        <form action="https://cafeoneng.us19.list-manage.com/subscribe/post?u=2cb2cc043bf7495bab14ed192&amp;id=7ba93f6756" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" validate
           class="form-section"
           v-if="showForm"
         >
@@ -53,6 +53,7 @@
           <div class="input-container">
             <div class="label">Your full name</div>
             <input
+              id="mce-FNAME" name="FNAME"
               type="text"
               class="input-field"
               :class="{error: $v.full_name.$error}"
@@ -69,6 +70,7 @@
           <div class="input-container">
             <div class="label">Email address</div>
             <input
+              id="mce-EMAIL" name="EMAIL"
               type="text"
               class="input-field"
               :class="{error: $v.email_address.$error}"
@@ -85,6 +87,7 @@
           <div class="input-container">
             <div class="label">Phone number</div>
             <input
+              id="mce-PHONE" name="PHONE"
               type="text"
               class="input-field"
               :class="{error: $v.phone_number.$error}"
@@ -112,7 +115,6 @@
           >
             <input
               type="submit"
-              @click.prevent="onSubmit()"
               value="Join In"
               :disabled="$v.$invalid"
               v-if="!loading"
@@ -136,7 +138,7 @@
           <div class="header-text">What we do</div>
           <div class="line-divider"></div>
           <div class="long-text">
-            At Café One, innovation meets community. We play host to Sterling Bank’s digital products; offering premium banking services and the best coffee in Lagos. First of its kind in Nigeria, we act as a space for you to co-work and network From business meetings to small sector-based events, we are intentional about building experiences and a community centred around you.
+            At Café One, innovation meets community. We play host to Sterling Bank’s digital products; offering premium banking services and the best coffee in Lagos. First of its kind in Nigeria, we act as a space for you to co-work and network. From business meetings to small sector-based events, we are intentional about building experiences and a community centred around you.
           </div>
           <div class="small-header-text">Opening Hours</div>
           <div class="opening-days-hours">
@@ -145,10 +147,10 @@
           </div>
           <div class="opening-days-hours">
             <div class="left-text">Sat - Sun</div>
-            <div class="right-text">9 am - 8 pm</div>
+            <div class="right-text">10 am - 8 pm</div>
           </div>
           <div class="small-header-text">Enquiries</div>
-          <div class="text-contact-details">cafe.one@sterlingbankng.com</div>
+          <div class="text-contact-details">cafe.one@sterling.ng</div>
           <div class="text-contact-details">09053872954, 09053872953</div>
           <div class="text-join-community">Join our community and get 10% off coffee on your first visit <img
               src="./assets/img/arrow.png"
