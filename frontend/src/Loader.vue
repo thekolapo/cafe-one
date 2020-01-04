@@ -3,10 +3,10 @@
     <div id="white-overlay" ref="whiteOverlay"></div>
     <div class="main-content">
       <div class="main-text">
-      <span class="big-text">Café One</span>
-      <div class="small-text">INNOVATION • COMMUNITY</div>
-      <div class="line-shape"></div>
-    </div>
+        <span class="big-text">Café One</span>
+        <div class="small-text">INNOVATION • COMMUNITY</div>
+        <div class="line-shape"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -19,7 +19,11 @@ export default {
   mounted() { 
     const { whiteOverlay } = this.$refs;
 
-    TweenMax.to(whiteOverlay, 0.8, {'width' : "100%", ease: Power2.easeInOut, delay: 2,
+    TweenMax.to(whiteOverlay, 0.8, 
+    {
+      'width' : "100%", 
+      ease: Power2.easeInOut, 
+      delay: 2,
       onComplete: setTimeout(() => {
          this.navigateTo('/landing');
       }, 3000),
